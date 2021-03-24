@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDoApp"
         mc:Ignorable="d"
-        Title="ToDoApp" Height="450" Width="800">
+        Title="ToDoApp" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dgToDoList" FontSize="16" FontWeight="Bold" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="491*"/>
+            <ColumnDefinition Width="309*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgToDoList" FontSize="16" FontWeight="Bold" Margin="10,10,10,10" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Header="CreationDate" Width="180"/>
                 <DataGridCheckBoxColumn IsReadOnly="False" Header="Done" Width="80"/>
