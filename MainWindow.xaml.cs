@@ -40,6 +40,15 @@ namespace ToDoApp
 
             //привязка списка к графической части
             dgToDoList.ItemsSource = _todoDataList;
+            _todoDataList.ListChanged += _todoDataList_ListChanged;                                 //это событие возникает, когда в списке что-то меняется
+        }
+
+        private void _todoDataList_ListChanged(object sender, ListChangedEventArgs e)               //sender - это _todoDataList
+        {
+            if (e.ListChangedType == ListChangedType.ItemAdded || e.ListChangedType == ListChangedType.ItemDeleted || e.ListChangedType == ListChangedType.ItemChanged)
+            {
+
+            }
         }
     }
 }
