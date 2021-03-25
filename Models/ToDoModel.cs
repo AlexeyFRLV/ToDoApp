@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using Newtonsoft.Json;
 
 namespace ToDoApp.Models
 {
     class ToDoModel : INotifyPropertyChanged
     {
+        [JsonProperty(PropertyName = "creationDate")]
         public DateTime CreationDate { get; set; } = DateTime.Now;
         private bool _isDone;
-
+        
+        [JsonProperty(PropertyName = "isDone")]
         public bool IsDone
         {
             get { return _isDone; }
@@ -28,6 +31,7 @@ namespace ToDoApp.Models
 
         private string _text;
 
+        [JsonProperty(PropertyName = "text")]
         public string Text
         {
             get { return _text; }
